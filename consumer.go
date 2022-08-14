@@ -53,6 +53,5 @@ func main() {
 				*ev.TopicPartition.Topic, string(ev.Key), string(ev.Value))
 		}
 	}
-
 	c.Close()
 }

@@ -74,7 +74,7 @@ func creatPathList2(pattern string) []string {
 }
 
 func DoItForMe(pathList []string, p *kafka.Producer) {
-	//var lines []Record
+	//var lines []Record //
 	for _, file := range pathList {
 		f, err := os.Open(file)
 		if err != nil {

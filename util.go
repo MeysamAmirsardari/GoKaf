@@ -35,6 +35,5 @@ func ReadConfig(configFile string) kafka.ConfigMap {
 		fmt.Printf("Failed to read file: %s", err)
 		os.Exit(1)
 	}
-
 	return m
 }
