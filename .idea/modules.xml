@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/GoKaf.iml" filepath="$PROJECT_DIR$/.idea/GoKaf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../sarama/.idea/sarama.iml" filepath="$PROJECT_DIR$/../../sarama/.idea/sarama.iml" />
     </modules>
   </component>
 </project>

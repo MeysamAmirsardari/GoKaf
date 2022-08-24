@@ -1,0 +1,96 @@
+docker exec broker kafka-topics --create --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --topic purchases
+
+
+
+docker compose exec broker kafka-topics --create --topic landmarks --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1
+
+
+
+docker compose exec broker \
+  kafka-topics --create \
+    --topic purchases \
+    --bootstrap-server localhost:9092 \
+    --replication-factor 1 \
+    --partitions 1
+
+
+bin\zookeeper-server-start.sh config\zookeeper.properties
+
+bin\kafka-server-start.sh config\server.properties
+
+
+go build -o out/consumer.exe util.go consumer.go
+go build -o out/producer.exe util.go producer.go
+
+.\out\producer.exe pcnf.properties
+.\out\consumer.exe ccnf.properties
+
+Aa123456789Aa
+
+bin\kafka-producer-perf-test.sh --topic ssl-perf-test --throughput -1 --num-records 3000000 --record-size 1024 --producer-props acks=all bootstrap.servers=broker0:9093,broker1:9093,broker2:9093 --producer.config /path/to/ssl-perf-test.properties
+bootstrap.servers=broker0:9093,broker1:9093,broker2:9093 --producer.config /path/to/ssl-perf-test.properties
+
+docker run -e ADV_HOST=127.0.0.1 -e EULA="https://licenses.lenses.io/d/?id=c6be6ace-1d4e-11ed-8f1e-42010af01003" --rm -p 3030:3030 -p 9092:9092 lensesio/box:latest
+
+Copy To Clipboard
+
+
+docker run --name lenses lensesio/lenses:5.0 -e LENSES_PORT=9991 -e LENSES_SECURITY_USER=admin -e LENSES_SECURITY_PASSWORD=sha256:8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+
+bin\kafka-topics.sh --bootstrap-server=localhost:9092 --describe --topic landmarks
+
+
+docker run -d -p 8080:8080 -v /tmp/application.yml:/app/application.yml tchiotludo/akhq
+
+
+
+
+
+
+
+
+
+
+
+
+
+./kafka-configs.bat --bootstrap-server localhost:9092 --entity-type brokers --entity-name 1 --all --describe
+
+sed -i "/log.retention.hours=/ s/=.*/=1/" server.properties
+sed -i "/log.retention.bytes=/ s/=.*/=100000000/" server.properties
+sed -i "/batch.size=/ s/=.*/=10000/" producer.properties
+sed -i "/linger.ms=/ s/=.*/=200/" producer.properties
+
+log.retention.bytes
+
+grep -i 'log.retention.[hms].*\=' server.properties
+grep -i 'log.retention.bytes.*\=' server.properties
+grep -i 'batch.size.*\=' producer.properties
+grep -i 'linger.ms.*\=' producer.properties
+
+
+
+log.dirs=/var/lib/kafka/data
+/etc/kafka
+
+docker pull lsiobase/xenial
+
+
+
+sed 's/log.retention.hours/log.retention.minutes/' server.properties
+
+
+./kafka-configs --bootstrap-server localhost:9092 --entity-type topics --entity-name landmarks --describe --all
+
+
+bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic test-rep-one --partitions 6 --replication-factor 1
+
+bin/kafka-topics.sh \
+  --zookeeper zookeeper.example.com:2181 \
+  --create \
+  --topic test \
+  --partitions 6 --replication-factor 3
+
+
+.\kafka-producer-perf-test.bat --topic test --num-records 100000000 --throughput -1 --producer-props bootstrap.servers=localhost:9092 batch.size=1000000 acks=1 linger.ms=100000 buffer.memory=1294967296 request.timeout.ms=300000 --add-config log.dirs=E:\ --record-size 1000 retention.bytes=100000000 retention.ms=300000 --print-metrics
+
